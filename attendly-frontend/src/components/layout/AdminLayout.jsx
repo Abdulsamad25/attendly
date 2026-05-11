@@ -55,7 +55,7 @@ const AdminLayout = ({ children }) => {
     <div className="flex bg-gray-50 h-screen">
       {/* Sidebar */}
       <aside
-        className={`fixed flex flex-col md:static inset-y-0 left-0 z-50 w-64 h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white shadow-lg transform transition-transform duration-300 ${
+        className={`fixed flex flex-col md:static inset-y-0 left-0 z-50 w-64 h-screen bg-linear-to-b from-slate-900 to-slate-800 text-white shadow-lg transform transition-transform duration-300 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
       >

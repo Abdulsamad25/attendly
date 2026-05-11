@@ -306,7 +306,7 @@ const AdminSettings = () => {
               <button
                 onClick={handleSaveAttendanceRules}
                 disabled={saving}
-                className="bg-gradient-to-r from-indigo-600 to-indigo-700 disabled:opacity-60 shadow-indigo-600/10 shadow-lg hover:brightness-110 px-4 py-3 rounded-xl w-full font-semibold text-white active:scale-[0.98] transition-all"
+                className="bg-linear-to-r from-indigo-600 to-indigo-700 disabled:opacity-60 shadow-indigo-600/10 shadow-lg hover:brightness-110 px-4 py-3 rounded-xl w-full font-semibold text-white active:scale-[0.98] transition-all"
               >
                 {saving ? "Updating..." : "Update Core Rules"}
               </button>
@@ -317,7 +317,7 @@ const AdminSettings = () => {
           <div className="flex gap-4 bg-indigo-50 p-6 border border-indigo-200 rounded-xl">
             <AlertCircle
               size={20}
-              className="flex-shrink-0 mt-0.5 text-indigo-600"
+              className="mt-0.5 text-indigo-600 shrink-0"
             />
             <div>
               <p className="mb-1 font-bold text-indigo-900 text-sm">
@@ -395,7 +395,7 @@ const AdminSettings = () => {
                         onChange={() => handleLeaveTypeToggle(leaveType._id)}
                         className="sr-only peer"
                       />
-                      <div className="peer after:top-[2px] after:left-[2px] after:absolute bg-gray-300 after:bg-white peer-checked:bg-emerald-500 after:border after:border-gray-300 peer-checked:after:border-white rounded-full after:rounded-full w-11 after:w-5 h-6 after:h-5 after:content-[''] after:transition-all peer-checked:after:translate-x-full"></div>
+                      <div className="peer after:top-0.5 after:left-0.5 after:absolute bg-gray-300 after:bg-white peer-checked:bg-emerald-500 after:border after:border-gray-300 peer-checked:after:border-white rounded-full after:rounded-full w-11 after:w-5 h-6 after:h-5 after:content-[''] after:transition-all peer-checked:after:translate-x-full"></div>
                     </label>
                   </div>
 

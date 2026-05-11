@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect } from "react";
 import { Clock, LogOut } from "lucide-react";
 import { useAuth } from "../../lib/AuthContext";
 
 const InactivityWarning = () => {
   const { showInactivityWarning, logout, resetInactivityTimer } = useAuth();
-  const [timeRemaining, setTimeRemaining] = useState(5 * 60); // 5 minutes in seconds
+  const [timeRemaining, setTimeRemaining] = useState(5 * 60); 
 
   useEffect(() => {
     if (!showInactivityWarning) {
@@ -72,14 +73,14 @@ const InactivityWarning = () => {
             onClick={() => {
               resetInactivityTimer();
             }}
-            className="flex flex-1 justify-center items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:brightness-110 px-4 py-3 rounded-lg font-semibold text-white active:scale-95 transition-all"
+            className="flex flex-1 justify-center items-center gap-2 bg-linear-to-r from-emerald-600 to-emerald-700 hover:brightness-110 px-4 py-3 rounded-lg font-semibold text-white active:scale-95 transition-all"
           >
             <Clock size={18} />
             Continue Session
           </button>
           <button
             onClick={logout}
-            className="flex flex-1 justify-center items-center gap-2 bg-gray-200 hover:bg-gray-300 px-4 py-3 rounded-lg font-semibold text-gray-900 active:scale-95 transition-all"
+            className="flex flex-1 justify-center items-center gap-2 bg-linear-to-r from-gray-200 to-gray-300 hover:brightness-110 px-4 py-3 rounded-lg font-semibold text-gray-900 active:scale-95 transition-all"
           >
             <LogOut size={18} />
             Logout
