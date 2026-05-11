@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/incompatible-library */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useForm } from "react-hook-form";

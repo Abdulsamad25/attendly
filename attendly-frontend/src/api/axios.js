@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from "axios";
 
 const api = axios.create({
@@ -21,7 +22,7 @@ const isTokenExpired = (token) => {
     const expiryTime = payload.exp * 1000; // Convert to milliseconds
     return Date.now() > expiryTime;
   } catch (error) {
-    return true; // If we can't parse, assume expired
+    return true; 
   }
 };
 

@@ -248,7 +248,7 @@ const StaffDirectory = ({
         ) : (
           <>
             <div className="w-full overflow-x-auto">
-              <table className="w-full min-w-[480px]">
+              <table className="w-full min-w-120">
                 <thead className="bg-gray-50 border-gray-200 border-b">
                   <tr>
                     <th className="px-4 sm:px-6 py-3 font-semibold text-gray-700 text-xs sm:text-sm text-left">

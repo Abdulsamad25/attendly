@@ -412,7 +412,7 @@ const PublicHolidays = () => {
           {/* Info Section */}
           <div className="bg-blue-50 p-6 border border-blue-200 rounded-lg">
             <div className="flex gap-4">
-              <Info size={24} className="flex-shrink-0 mt-0.5 text-blue-600" />
+              <Info size={24} className="mt-0.5 text-blue-600 shrink-0" />
               <div>
                 <h3 className="font-semibold text-blue-900">
                   Holiday Impact on Payroll

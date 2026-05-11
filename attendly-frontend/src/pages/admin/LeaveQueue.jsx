@@ -121,7 +121,7 @@ const LeaveQueue = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-4">
+          <div className="gap-2 sm:gap-4 grid grid-cols-3">
             <div className="bg-white p-3 sm:p-4 border border-gray-200 rounded-lg">
               <p className="font-medium text-gray-600 text-xs sm:text-sm">
                 PENDING
@@ -172,11 +172,11 @@ const LeaveQueue = () => {
                     {/* Request Header */}
                     <div className="flex flex-col gap-4">
                       {/* Top row: avatar + info + action buttons */}
-                      <div className="flex items-start justify-between gap-3">
+                      <div className="flex justify-between items-start gap-3">
                         {/* Avatar + name/dept */}
                         <div className="flex gap-3 min-w-0">
                           <div
-                            className={`w-10 h-10 sm:w-12 sm:h-12 ${avatarBg} rounded-full flex items-center justify-center font-semibold flex-shrink-0 text-sm sm:text-base`}
+                            className={`w-10 h-10 sm:w-12 sm:h-12 ${avatarBg} rounded-full flex items-center justify-center font-semibold shrink-0 text-sm sm:text-base`}
                           >
                             {request.user_id?.name?.charAt(0) || "?"}
                           </div>
@@ -191,10 +191,10 @@ const LeaveQueue = () => {
                         </div>
 
                         {/* Action buttons — always visible, top-right */}
-                        <div className="flex gap-2 flex-shrink-0">
+                        <div className="flex gap-2 shrink-0">
                           <button
                             onClick={() => handleApprove(request._id)}
-                            className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-white text-xs sm:text-sm transition-colors"
+                            className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-medium text-white text-xs sm:text-sm transition-colors"
                           >
                             <CheckCircle size={15} className="sm:hidden" />
                             <CheckCircle
@@ -207,7 +207,7 @@ const LeaveQueue = () => {
                           </button>
                           <button
                             onClick={() => handleReject(request._id)}
-                            className="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-white text-xs sm:text-sm transition-colors"
+                            className="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-medium text-white text-xs sm:text-sm transition-colors"
                           >
                             <XCircle size={15} className="sm:hidden" />
                             <XCircle size={18} className="hidden sm:block" />
@@ -275,8 +275,8 @@ const LeaveQueue = () => {
           {/* Capacity Insight */}
           <div className="bg-indigo-50 p-4 sm:p-6 border border-indigo-200 rounded-lg">
             <div className="flex gap-3 sm:gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex justify-center items-center bg-indigo-600 rounded-md w-10 h-10 sm:w-12 sm:h-12 text-white text-base sm:text-lg">
+              <div className="shrink-0">
+                <div className="flex justify-center items-center bg-indigo-600 rounded-md w-10 sm:w-12 h-10 sm:h-12 text-white text-base sm:text-lg">
                   ℹ
                 </div>
               </div>
