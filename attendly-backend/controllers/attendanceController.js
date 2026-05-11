@@ -78,8 +78,8 @@ const clockIn = async (req, res) => {
       user_id: userId,
       company_id: companyId,
       status: "approved",
-      start_date: { $lte: today },
-      end_date: { $gte: today },
+      start_date: { $lte: dateKey },
+      end_date: { $gte: dateKey },
     });
     if (onLeave) {
       return res

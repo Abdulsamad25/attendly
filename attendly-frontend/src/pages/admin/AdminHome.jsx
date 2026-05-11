@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -51,7 +52,7 @@ const AdminHome = () => {
 
     const intervalId = setInterval(() => {
       fetchDashboardData(false);
-    }, 10000); // Poll every 10 seconds
+    }, 10000); 
 
     return () => clearInterval(intervalId);
   }, []);
@@ -63,18 +64,17 @@ const AdminHome = () => {
 
       // Fetch today's attendance summary
       const attendanceRes = await attendanceApi.getTodaySummary();
-      console.log("Attendance Summary Response:", attendanceRes);
+      
       const today = attendanceRes.data || {};
-      console.log("Today Data:", today);
-
+   
       // Fetch recent attendance (for clocked-in staff list)
       const recentRes = await attendanceApi.getRecent(10);
-      console.log("Recent Attendance Response:", recentRes);
+   
       const recentRecords = recentRes.data || [];
 
       // Fetch pending leaves
       const leaveRes = await leaveApi.getPending();
-      console.log("Pending Leaves Response:", leaveRes);
+
       const pendingLeaves = leaveRes.leaves || [];
 
       // Fetch weekly trend data
@@ -82,7 +82,6 @@ const AdminHome = () => {
       let monthlyData = [];
       try {
         const weeklyRes = await attendanceApi.getWeekly();
-        console.log("Weekly Response:", weeklyRes);
         const raw = weeklyRes.data || [];
         weeklyData = raw.map((item) => ({
           day: (item.day || item.date || "")
@@ -97,7 +96,7 @@ const AdminHome = () => {
                 : 0,
         }));
       } catch (err) {
-        console.log("Weekly data error:", err);
+
         weeklyData = [];
       }
 
@@ -105,7 +104,6 @@ const AdminHome = () => {
       try {
         const monthlyRes = await attendanceApi.getMonthly?.();
         if (monthlyRes) {
-          console.log("Monthly Response:", monthlyRes);
           const raw = monthlyRes.data || [];
           monthlyData = raw.map((item) => ({
             day: item.day || item.date || "",
@@ -118,7 +116,7 @@ const AdminHome = () => {
           }));
         }
       } catch (err) {
-        console.log("Monthly data error (using weekly as fallback):", err);
+    
         monthlyData = weeklyData; // Fallback to weekly data
       }
 

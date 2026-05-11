@@ -23,13 +23,13 @@ const isPublicHoliday = async (companyId, dateKey) => {
 /**
  * Check if a user has an approved leave covering today.
  */
-const isOnApprovedLeave = async (userId, companyId, today) => {
+const isOnApprovedLeave = async (userId, companyId, dateKey) => {
   const leave = await Leave.findOne({
     user_id: userId,
     company_id: companyId,
     status: "approved",
-    start_date: { $lte: today },
-    end_date: { $gte: today },
+    start_date: { $lte: dateKey },
+    end_date: { $gte: dateKey },
   });
   return !!leave;
 };
@@ -93,7 +93,8 @@ const startAbsentCron = () => {
             if (existing) continue;
 
             // Skip if on approved leave
-            if (await isOnApprovedLeave(member._id, companyId, today)) continue;
+            if (await isOnApprovedLeave(member._id, companyId, todayKey))
+              continue;
 
             // Mark absent
             await Attendance.create({
