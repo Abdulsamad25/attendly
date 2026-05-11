@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-primary: #3B3FA8;
+  --color-primary-dark: #1E2266;
+  --color-primary-light: #E8E9F5;
+  --color-surface: #F5F6FA;
+  --color-status-present: #10B981;
+  --color-status-late: #F59E0B;
+  --color-status-absent: #EF4444;
+  --color-status-on_leave: #8B5CF6;
+  --color-status-holiday: #38BDF8;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-surface font-sans text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply w-full px-4 py-2.5 rounded-lg border border-gray-200 bg-gray-50
+           text-sm text-gray-900 placeholder-gray-400
+           focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+           transition-colors duration-150;
+  }
+
+  .btn-primary {
+    @apply w-full flex items-center justify-center gap-2 px-4 py-2.5
+           bg-primary hover:bg-primary-dark text-white text-sm font-semibold
+           rounded-lg transition-colors duration-150 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2.5 border border-gray-200 text-gray-700 text-sm font-medium
+           rounded-lg hover:bg-gray-50 transition-colors duration-150;
+  }
+
+  .card {
+    @apply bg-white shadow-sm border border-gray-100 rounded-xl;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full font-semibold text-xs uppercase tracking-wide;
+  }
+}
